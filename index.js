@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/',(req,res) => {
-    res.send({'hi':'there, port number' + `${process.env.PORT}`});
+    res.send({'hi':'there, port number ' + `${process.env.PORT}`});
 });
 
 app.get('/home',(req,res) => {
