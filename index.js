@@ -6,7 +6,7 @@ app.get('/',(req,res) => {
 });
 
 app.get('/home',(req,res) => {
-    res.send({name:'Ayon'});
+    res.send({name:'Scarecrow'});
 });
 
 app.listen(5000);
