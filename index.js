@@ -3,6 +3,7 @@ const keys = require('./config/keys.js');
 require('./services/passport.js');
 const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
+require('./models/User.js');
 
 const app = express();
 
