@@ -1,17 +1,20 @@
 const express = require('express');
-const keys = require('./config/keys.js');
-require('./services/passport.js');
-const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
+const keys = require('./config/keys.js');
+
 require('./models/User.js');
+require('./services/passport.js');
+
+const { MongoClient } = require('mongodb');
+
 
 const app = express();
 
 
 mongoose.connect(keys.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
-// const authRoutes = require('./routes/authRoutes.js');
-// authRoutes(app);
+const authRoutes = require('./routes/authRoutes.js');
+authRoutes(app);
 
 require('./routes/authRoutes.js')(app);
 
