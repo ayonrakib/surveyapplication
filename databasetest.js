@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const keys = require('./config/keys.js');
 
-mongoose.connect(keys.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://myuser:6ood0dhTwO45g71c@cluster0.wvng4.mongodb.net/CRM?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
 const databaseConnection = mongoose.connection;
 databaseConnection.on('error',console.error.bind(console, 'connection error:'));
@@ -24,10 +23,10 @@ const Kitten = mongoose.model('Kitten', kittySchema);
 const fluffy = new Kitten({ name: 'fluffy' });
 fluffy.speak();
 
-// fluffy.save(function (err, fluffy) {
-//   if (err) return console.error(err);
-//   fluffy.speak();
-// });
+fluffy.save(function (err, fluffy) {
+  if (err) return console.error(err);
+  fluffy.speak();
+});
 
 Kitten.find(function (err, kittens) {
   if (err) return console.error(err);
