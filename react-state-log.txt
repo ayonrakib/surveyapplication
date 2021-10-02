@@ -1,0 +1,7 @@
+counter: x123
+    1
+    100
+counter: x124
+    0
+    100
+
